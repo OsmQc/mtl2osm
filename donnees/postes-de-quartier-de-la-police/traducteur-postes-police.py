@@ -3,7 +3,7 @@ Ce fichier est publié sous licence CC0:
 http://creativecommons.org/publicdomain/zero/1.0/
 
 Format en entrée:
- Fichier KML contant les balises suivantes:
+ Fichier KML contenant les balises suivantes:
   Name: nom du poste
   description: adresse formattée en HTML, sans le code postal
 
