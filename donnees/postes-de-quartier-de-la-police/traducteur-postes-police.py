@@ -1,3 +1,4 @@
+# coding: utf-8
 """
 Ce fichier est publié sous licence CC0:
 http://creativecommons.org/publicdomain/zero/1.0/
