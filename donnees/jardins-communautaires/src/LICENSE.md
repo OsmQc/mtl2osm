@@ -1,3 +1,7 @@
+Ces données proviennent de:
+
+http://donnees.ville.montreal.qc.ca/dataset/jardins-communautaires
+
 Ces données sont publiées sous la CC-BY-4.0:
 
 http://donnees.ville.montreal.qc.ca/licence-2014/
