@@ -1,5 +1,20 @@
-# Ce fichier est publié sous licence CC0:
-# http://creativecommons.org/publicdomain/zero/1.0/
+"""
+Ce fichier est publié sous licence CC0:
+http://creativecommons.org/publicdomain/zero/1.0/
+
+Format en entrée:
+ Fichier KML contant les balises suivantes:
+  Name: nom du poste
+  description: adresse formattée en HTML, sans le code postal
+
+Format en sortie:
+ Fichier OSM avec les balises suivantes:
+  name
+  addr:housenumber
+  addr:street
+  addr:city
+
+"""
 
 ABBREVIATIONS = {
     'boul': 'boulevard',
