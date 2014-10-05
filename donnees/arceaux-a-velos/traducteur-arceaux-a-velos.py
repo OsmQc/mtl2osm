@@ -41,6 +41,13 @@ CAPACITE = {
     '686': 30,    # Support pour 30 bicyclettes (64294) - ancien standard
 }
 
+MATERIEL = {
+    'Acier':     'steel',
+    'Aluminium': 'aluminium',
+    u'Béton':    'concrete',
+    'Bois':      'wood',
+}
+
 def filterTags(attrs):
     if not attrs:
         return
@@ -58,5 +65,8 @@ def filterTags(attrs):
         tags['ref:ville_de_montreal:arceaux_velos:inv_catl_no'] = catl_no
         if catl_no in CAPACITE:
             tags['capacity'] = str(CAPACITE[catl_no])
+
+    if 'MATERIAU' in attrs and attrs['MATERIAU'] in MATERIEL:
+        tags['material'] = MATERIEL[attrs['MATERIAU']]
 
     return tags
