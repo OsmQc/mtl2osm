@@ -5,15 +5,27 @@ Take a CSV with geographical coordinates as input.
 Outputs to the OpenStreetMap .osm file format.
 
 Released under the MIT license: http://opensource.org/licenses/mit-license.php
-Somewhat inspired from https://github.com/pnorman/ogr2osm/
+Contains some code from https://github.com/pnorman/ogr2osm/
 
 This program requires Python 2.7.
 """
 
+import os
+import sys
 import csv
 import argparse
+import importlib
 
 from lxml import etree
+
+class DefaultTranslator:
+    def filterTags(self, attrs):
+        """ return a dictionary that will make the tags of the node """
+        return attrs
+
+    def keepRow(self, row):
+        """ return True to keep the row, False otherwise. """
+        return True
 
 class OsmId:
     _next = 0
@@ -22,6 +34,45 @@ class OsmId:
     def next_id(cls):
         cls._next = cls._next - 1
         return cls._next
+
+def get_translator(filename):
+    if not filename:
+        return DefaultTranslator()
+
+    # add dirs to path if necessary
+    (root, ext) = os.path.splitext(filename)
+    if os.path.exists(filename) and ext == '.py':
+        # user supplied translation file directly
+        sys.path.insert(0, os.path.dirname(root))
+    else:
+        # first check translations in the subdir translations of cwd
+        sys.path.insert(0, os.path.join(os.getcwd(), "translations"))
+        # then check subdir of script dir
+        sys.path.insert(1, os.path.join(os.path.dirname(__file__), "translations"))
+        # (the cwd will also be checked implicityly)
+
+    # strip .py if present, as import wants just the module name
+    if ext == '.py':
+        filename = os.path.basename(root)
+
+    try:
+        imported_translator = __import__(filename, fromlist = [''])
+    except SyntaxError as e:
+        print "Syntax error in the translator module:"
+        raise e
+    except Exception as e:
+        raise Exception("Could not load translator module '%s'. Translation "
+               "script must be in your current directory, or in the "
+               "translations/ subdirectory of your current or csv2osm.py "
+               "directory. The following directories have been considered: %s"
+               % (filename, str(sys.path)))
+
+    translator = DefaultTranslator()
+    for translation_method in ('filterTags', 'keepRow'):
+        if hasattr(imported_translator, translation_method):
+            setattr(translator, translation_method, getattr(imported_translator, translation_method))
+
+    return translator
 
 def read_csv(filename, dialect, encoding):
     with open(filename, 'rb') as csv_file:
@@ -40,7 +91,7 @@ def get_lon_lat(row, longitude_field, latitude_field):
                         "the name of the column containing the latitude." % latitude_field)
     return row[longitude_field], row[latitude_field]
 
-def generate_node_xml(row, longitude_field, latitude_field):
+def generate_node_xml(row, longitude_field, latitude_field, translator):
     lon, lat = get_lon_lat(row, longitude_field, latitude_field)
     xmlattrs = {
         'visible': 'true',
@@ -49,7 +100,8 @@ def generate_node_xml(row, longitude_field, latitude_field):
         'id': str(OsmId.next_id()),
     }
     node = etree.Element('node', xmlattrs)
-    for key, value in row.iteritems():
+    node_data = translator.filterTags(row)
+    for key, value in node_data.iteritems():
         tag = etree.Element('tag', {'k':key, 'v':value})
         node.append(tag)
     return etree.tostring(node)
@@ -67,18 +119,26 @@ def parse_args():
         help='Name of the field that contains the longitude')
     parser.add_argument('--lat', dest='latitude_field', default='latitude',
         help='Name of the field that contains the latitude')
-    #parser.add_argument('--translation', help='Python file to import that '
-    #    'contains special translation methods to transform the tags.')
+    parser.add_argument('--translator', help='Python file to import that '
+        'contains special translation methods to transform the tags.')
+    parser.add_argument('-f', '--force', dest='force_overwrite', action='store_true',
+        help='Force overwriting the destination file.')
     return parser.parse_args()
 
 def main():
     args = parse_args()
+    if os.path.exists(args.output_file) and not args.force_overwrite:
+        print >> sys.stderr, "%s already exists. Use -f to overwrite." % args.output_file
+        sys.exit(1)
+    translator = get_translator(args.translator)
 
     # Open up the output file with the system default buffering
     with open(args.output_file, 'w', -1) as output:
         output.write('<?xml version="1.0"?>\n<osm version="0.6" upload="false" generator="csv2osm">\n')
         for row in read_csv(args.csv_file, args.csv_dialect, args.csv_encoding):
-            output.write(generate_node_xml(row, args.longitude_field, args.latitude_field))
+            if not translator.keepRow(row):
+                continue
+            output.write(generate_node_xml(row, args.longitude_field, args.latitude_field, translator))
             output.write('\n')
         output.write('</osm>\n')
 
