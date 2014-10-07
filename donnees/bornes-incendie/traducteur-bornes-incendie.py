@@ -39,6 +39,10 @@ def filterTags(attrs):
             tags['disused:emergency'] = 'fire_hydrant'
         else: # AV et E
             tags['emergency'] = 'fire_hydrant'
+            if statut == 'AV':
+                tags['fixme'] = u"La Ville de Montréal a identifié cette borne " \
+				u"d'incendie comme étant \"à valider\". " \
+				u"Il faudrait valider sur le terrain." 
 
     if 'NOTRCGB' in attrs:
         tags['ref:ville_de_montreal:notrcgb'] = attrs['NOTRCGB']
