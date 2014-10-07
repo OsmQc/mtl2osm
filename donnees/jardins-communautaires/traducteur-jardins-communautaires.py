@@ -15,7 +15,7 @@ Format en sortie:
     où $Text_ provient du Shape File, majuscules ajustées
   landuse=allotments
   operator=(dérivé de NomAr_DESC via une table de correspondance)
-  ref=$Index
+  ref:ville_de_montreal:index_jardin_communautaire=$Index
 """
 
 def filterTags(attrs):
@@ -30,15 +30,13 @@ def filterTags(attrs):
         tags['name'] = 'Jardin communautaire ' + TRAD_NOMS[attrs['Text_']]
 
     if 'Index' in attrs:
-        tags['ref'] = attrs['Index']
+        tags['ref:ville_de_montreal:index_jardin_communautaire'] = attrs['Index']
 
     if 'NomAr_DESC' in attrs:
         if TYPE_ARR[attrs['NomAr_DESC']] == 'arrondissement':
             tags['operator'] = u"Ville de Montréal, arrondissement " + attrs['NomAr_DESC']
         else:
             tags['operator'] = u"Ville de " + attrs['NomAr_DESC']
-
-    print tags['operator']
 
     return tags
 
