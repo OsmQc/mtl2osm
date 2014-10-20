@@ -20,6 +20,18 @@ Format en sortie:
   ref:ville_de_montreal:notrcgb
   ref:ville_de_montreal:id_aqu_bi
 
+ATTENTION:
+
+Ce jeu de données n'est présentement pas utilisable. Voici le commentaire
+de Sylvain Ouellet sur le suivi des demandes de données ouvertes:
+http://donnees.ville.montreal.qc.ca/ddo/suivi-ddo/
+
+   La série de données "Géolocalisation des bornes-fontaines" ne
+   permet pas de distinguer les bornes-fontaines régulières (rouges)
+   des bornes-fontaines sèches (bleues) de la STM. Par exemple, les
+   bornes-fontaines (ID Adresse) 92779 et 118324 sont des bornes
+   sèches de la STM, or rien ne l'indique dans les données actuelles.
+
 """
 
 def filterTags(attrs):
