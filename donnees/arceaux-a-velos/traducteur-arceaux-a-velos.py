@@ -25,9 +25,8 @@ Format en entrée:
 Format en sortie:
  Fichier OSM avec les balises suivantes:
   amenity=bicycle_parking
-  ref:ville_de_montreal:arceaux_velos:inv_id=$INV_ID
-  ref:ville_de_montreal:arceaux_velos:inv_no=$INV_NO
-  ref:ville_de_montreal:arceaux_velos:inv_catl_no=$INV_CATL_NO
+  ref:montreal:inv_id=$INV_ID
+  ref:montreal:inv_catl_no=$INV_CATL_NO
   capacity=<nombre de places> (si peut être déduit de MARQ)
   operator=Ville de Montréal
 
@@ -58,11 +57,11 @@ def filterTags(attrs):
     }
 
     if 'INV_ID' in attrs:
-        tags['ref:ville_de_montreal:arceaux_velos:inv_id'] = attrs['INV_ID']
+        tags['ref:montreal:inv_id'] = attrs['INV_ID']
 
     if 'INV_CATL_NO' in attrs:
         catl_no = attrs['INV_CATL_NO']
-        tags['ref:ville_de_montreal:arceaux_velos:inv_catl_no'] = catl_no
+        tags['ref:montreal:inv_catl_no'] = catl_no
         if catl_no in CAPACITE:
             tags['capacity'] = str(CAPACITE[catl_no])
 
