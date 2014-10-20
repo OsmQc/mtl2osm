@@ -17,8 +17,8 @@ Format en entrée:
 Format en sortie:
  Fichier OSM avec les balises suivantes:
   emergency=fire_hydrant
-  ref:ville_de_montreal:notrcgb
-  ref:ville_de_montreal:id_aqu_bi
+  ref:montreal:notrcgb
+  ref:montreal:id_aqu_bi
 
 ATTENTION:
 
@@ -57,9 +57,9 @@ def filterTags(attrs):
 				u"Il faudrait valider sur le terrain." 
 
     if 'NOTRCGB' in attrs:
-        tags['ref:ville_de_montreal:notrcgb'] = attrs['NOTRCGB']
+        tags['ref:montreal:notrcgb'] = attrs['NOTRCGB']
 
     if 'ID_AQU_BI' in attrs:
-        tags['ref:ville_de_montreal:id_aqu_bi'] = attrs['ID_AQU_BI']
+        tags['ref:montreal:id_aqu_bi'] = attrs['ID_AQU_BI']
 
     return tags
