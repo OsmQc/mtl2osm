@@ -12,6 +12,5 @@ Installation
 Installer les dépendances Debian:
 
 <pre>
-sudo apt-get install libgdal-dev python-dev python-lxml
+sudo apt-get install libgdal-dev python-dev python-lxml libspatialindex-dev
 </pre>
-
