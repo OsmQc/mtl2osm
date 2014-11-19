@@ -12,6 +12,6 @@ Installation
 Installer les dépendances Debian:
 
 <pre>
-sudo apt-get install git virtualenv python-virtualenv libgdal-dev python-dev python-lxml
+sudo apt-get install git virtualenv python-virtualenv libgdal-dev python-dev python-lxml libgdal-dev
 </pre>
 
