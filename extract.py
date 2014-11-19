@@ -2,12 +2,11 @@ import fiona
 from shapely.geometry import shape, mapping
 
 grid = fiona.open('donnees/quadrillage_example.json', 'r')
-print grid
 
 from rtree import index
 idx = index.Index()
 
-gns = fiona.open('donnees/jardins-communautaires/osm/jardins-communautaires.osm', 'r')
+gns = fiona.open('donnees/bornes-incendie/geojson/bornes-incendies.json', 'r')
 
 for pos, point in enumerate(gns):
     geom = shape(point['geometry'])
@@ -20,7 +19,7 @@ for task in grid:
 
     schema = gns.schema.copy()
     p = task['properties']
-    filename = 'export/gns_%s_%s_%s.osm' % (p['zoom'], p['x'], p['y'])
+    filename = 'donnees/bornes-incendie/export/bornes-incendie_%s_%s_%s.shp' % (p['zoom'], p['x'], p['y'])
 
     overlapping = [gns[pos] for pos in idx.intersection(polygon.bounds)]
 
