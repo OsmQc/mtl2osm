@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<osm version="0.6" upload="false" generator="osm_grid_splitter">
+<node lat="45.583362" visible="true" lon="-73.542094" id="-1"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="6680"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 48"/><tag k="addr:street" v="Rue Sherbrooke Est"/></node>
+<node lat="45.585063" visible="true" lon="-73.593463" id="-6"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="8181"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 42"/><tag k="addr:street" v="Boulevard Lacordaire"/></node>
+<node lat="45.607714" visible="true" lon="-73.615622" id="-8"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="6100"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 39"/><tag k="addr:street" v="Boulevard Henri-Bourassa"/></node>
+<node lat="45.641606" visible="true" lon="-73.505428" id="-14"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="1498"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 49"/><tag k="addr:street" v="Boulevard Saint-Jean-Baptiste"/></node>
+<node lat="45.605031" visible="true" lon="-73.552988" id="-19"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="6850"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 46"/><tag k="addr:street" v="Boulevard Joseph-Renaud"/></node>
+<node lat="45.633302" visible="true" lon="-73.586437" id="-27"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="8200"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 45"/><tag k="addr:street" v="Boulevard Maurice-Duplessis"/></node>
+</osm>

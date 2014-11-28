@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<osm version="0.6" upload="false" generator="osm_grid_splitter">
+<node lat="45.577735" visible="true" lon="-73.617431" id="-3"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="8930"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 30"/><tag k="addr:street" v="Boulevard Pie-IX"/></node>
+<node lat="45.525262" visible="true" lon="-73.591197" id="-11"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="209"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 37"/><tag k="addr:street" v="Avenue Laurier Est"/></node>
+<node lat="45.537735" visible="true" lon="-73.628854" id="-13"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="7920"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 31"/><tag k="addr:street" v="Boulevard Saint-Laurent"/></node>
+<node lat="45.539756" visible="true" lon="-73.609095" id="-15"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="920"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 35"/><tag k="addr:street" v="Rue Belanger"/></node>
+<node lat="45.525525" visible="true" lon="-73.575235" id="-23"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="1033"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 38"/><tag k="addr:street" v="Rue Rachel Est"/></node>
+<node lat="45.54235" visible="true" lon="-73.569284" id="-29"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="4807"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 44"/><tag k="addr:street" v="Rue Molson"/></node>
+<node lat="45.526943" visible="true" lon="-73.619492" id="-32"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="570"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 33"/><tag k="addr:street" v="Avenue Beaumont"/></node>
+</osm>
