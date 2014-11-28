@@ -17,6 +17,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
+import os
 import json
 
 from collections import defaultdict
@@ -41,6 +42,7 @@ def parse_args():
     parser = ArgumentParser(description=__doc__)
     parser.add_argument("osm", help="OSM filename as input")
     parser.add_argument("grid", help="Grid of reference")
+    parser.add_argument("outbasedir", help="Output directory")
     parser.add_argument("-v", "--verbose", action="store_true", default=False,
                         help="Verbose display")
     return parser.parse_args()
@@ -94,8 +96,12 @@ def main():
     # Write the set of .osm files, one per grid element
     for json_feature, square_shape in grid:
         prop = json_feature['properties']
-        with open('out_%s_%s_%s.osm' % (prop['zoom'], prop['x'], prop['y']),
-                  'wb') as output:
+        outdir = '%s/%s' % (prop['zoom'], prop['x'])
+        outdir = os.path.join(args.outbasedir, outdir)
+        outfile = '%s/%s.osm' % (outdir, prop['y'])
+        if not os.path.exists(outdir):
+            os.makedirs(outdir)
+        with open(outfile, 'wb') as output:
             output.write('<?xml version="1.0"?>\n<osm version="0.6" upload="false" generator="osm_grid_splitter">\n')  # noqa
             for xmlnode in nodes[json_feature['id']]:
                 output.write(etree.tostring(xmlnode))
