@@ -2,6 +2,7 @@
 A program to split a .osm file based on a grid provided in GeoJSON format.
 
 Copyright 2014 Guillaume Pratte <guillaume@guillaumepratte.net>
+Copyright 2014 Mathieu Leduc-Hamel <mathieu@mlhamel.org>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
