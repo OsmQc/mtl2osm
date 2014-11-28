@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<osm version="0.6" upload="false" generator="osm_grid_splitter">
+<node lat="45.49437" visible="true" lon="-73.807301" id="-2"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="4139"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 04"/><tag k="addr:street" v="Boulevard des Sources"/></node>
+<node lat="45.528533" visible="true" lon="-73.701026" id="-5"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="11756"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 10"/><tag k="addr:street" v="Boulevard O'brien"/></node>
+<node lat="45.518359" visible="true" lon="-73.696679" id="-16"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="1761"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 07"/><tag k="addr:street" v="Rue Grenet"/></node>
+<node lat="45.476658" visible="true" lon="-73.661623" id="-20"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="5757"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 09"/><tag k="addr:street" v="Boulevard Cavenuedish"/></node>
+<node lat="45.568569" visible="true" lon="-73.653614" id="-30"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="1805"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 27"/><tag k="addr:street" v="Rue Fleury Est"/></node>
+</osm>

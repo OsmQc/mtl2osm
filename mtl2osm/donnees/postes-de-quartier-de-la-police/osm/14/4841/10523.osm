@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<osm version="0.6" upload="false" generator="osm_grid_splitter">
+<node lat="45.5201" visible="true" lon="-73.61561" id="-7"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="1435"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 24"/><tag k="addr:street" v="Avenue Van-Horne"/></node>
+</osm>

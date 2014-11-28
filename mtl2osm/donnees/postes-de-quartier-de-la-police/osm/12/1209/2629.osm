@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<osm version="0.6" upload="false" generator="osm_grid_splitter">
+<node lat="45.43441" visible="true" lon="-73.677137" id="-18"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="170"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 08"/><tag k="addr:street" v="15e Avenue"/></node>
+</osm>
