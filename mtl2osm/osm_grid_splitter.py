@@ -48,16 +48,25 @@ def parse_args():
 def main():
     args = parse_args()
 
+    # A dictionary to "classify" each OSM points into each grid
+    result = {}
+
+    # An index of the JSON grid features
+    json_feature_index = {}
+
     # Load the grid generated from the HOT task manager
     hot_json_grid = json.load(open(args.grid))
 
-    # Transform each square of the grid into a shape with which we can
-    # intersect the points from the OSM file
-    grid = [(feature, geometry.shape(feature['geometry'])) for feature in
-            hot_json_grid['features']]
+    grid = []
+    for feature in hot_json_grid['features']:
+        # Pre-emptively transform each square of the grid into a shape
+        # with which we can intersect the points from the OSM file.
+        # This is an optimization to avoid creating shapes
+        # in a O(n^2) loop.
+        grid.append((feature, geometry.shape(feature['geometry'])))
 
-    # A dictionary to "classify" each OSM points into each grid
-    result = {}
+        # Index each feature by its id
+        json_feature_index[feature['id']] = feature
 
     # Intersect the points from the .osm file with the JSON grid
     for xmlnode in get_xml_nodes(args.osm):
@@ -70,7 +79,8 @@ def main():
 
     # Write the set of .osm files, one per grid element
     for grid_id, xmlnodes in result.iteritems():
-        with open('out_%s.osm' % grid_id, 'wb') as output:
+        prop = json_feature_index[grid_id]['properties']
+        with open('out_%s_%s_%s.osm' % (prop['zoom'], prop['x'], prop['y']), 'wb') as output:
             output.write('<?xml version="1.0"?>\n<osm version="0.6" upload="false" generator="osm_grid_splitter">\n')  # noqa
             # We need to reinitialize the id for each .osm file
             osmid = -1
