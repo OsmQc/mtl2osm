@@ -30,4 +30,6 @@ Utilisation du script de découpage par grille
 Le script découpage en grille prend un fichier osm en source et une grille de
 défination de grille. Par exemple:
 
-    $ mtl2osm-grid-splitter mtl2osm/donnees/monuments/osm/monuments.osm mtl2osm/donnees/montreal_10.json
+    $ for i in 10 11 12 13 14 15 16;
+      do mtl2osm-grid-splitter mtl2osm/donnees/monuments/osm/monuments.osm mtl2osm/grilles/montreal_$i.json mtl2osm/donnees/monuments/osm;
+      done
