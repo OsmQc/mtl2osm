@@ -97,16 +97,10 @@ def main():
         with open('out_%s_%s_%s.osm' % (prop['zoom'], prop['x'], prop['y']),
                   'wb') as output:
             output.write('<?xml version="1.0"?>\n<osm version="0.6" upload="false" generator="osm_grid_splitter">\n')  # noqa
-            # We need to reinitialize the id for each .osm file
-            osmid = -1
             for xmlnode in nodes[json_feature['id']]:
-                xmlnode.set('id', str(osmid))
                 output.write(etree.tostring(xmlnode))
-                osmid = osmid - 1
             for xmlnode in ways[json_feature['id']]:
-                xmlnode.set('id', str(osmid))
                 output.write(etree.tostring(xmlnode))
-                osmid = osmid - 1
             output.write('</osm>\n')
 
 
