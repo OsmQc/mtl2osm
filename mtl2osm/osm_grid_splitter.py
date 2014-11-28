@@ -19,19 +19,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import json
 
+from collections import defaultdict
 from argparse import ArgumentParser
 
 from lxml import etree
 from shapely import geometry
 
 
-def get_xml_nodes(osm_filename):
+def get_xml_nodes(osm_filename, node_type="node"):
     for event, element in etree.iterparse(open(osm_filename, 'r')):
         # Work around Launchpad bug #1185701 by bailing out after the
         # end of the document root.
         if element.getparent() is None:
             break
-        if element.tag != 'node':
+        if element.tag != node_type:
             continue
         yield element
 
@@ -56,25 +57,42 @@ def main():
     grid = [(feature, geometry.shape(feature['geometry'])) for feature in
             hot_json_grid['features']]
 
-    # A dictionary to "classify" each OSM points into each grid
-    result = {}
+    # Dictionaries to "classify" each OSM points into each grid
+    points = dict()
+    ways = defaultdict(list)
+    nodes = defaultdict(list)
 
     # Intersect the points from the .osm file with the JSON grid
     for xmlnode in get_xml_nodes(args.osm):
         lon = float(xmlnode.get('lon'))
         lat = float(xmlnode.get('lat'))
         point = geometry.Point(lon, lat)
+        points[xmlnode.get("id")] = point
         for json_feature, square_shape in grid:
             if square_shape.intersects(point):
-                result.setdefault(json_feature['id'], []).append(xmlnode)
+                nodes[json_feature['id']].append(xmlnode)
+
+    # Intersect the points from the .osm file with the JSON grid
+    for xmlnode in get_xml_nodes(args.osm, node_type="way"):
+        for node in xmlnode.getchildren():
+            if node.tag != "nd":
+                continue
+            point = points[node.get("ref")]
+            for json_feature, square_shape in grid:
+                if square_shape.intersects(point):
+                    ways[json_feature['id']].append(xmlnode)
 
     # Write the set of .osm files, one per grid element
-    for grid_id, xmlnodes in result.iteritems():
-        with open('out_%s.osm' % grid_id, 'wb') as output:
+    for json_feature, square_shape in grid:
+        with open('out_%s.osm' % json_feature['id'], 'wb') as output:
             output.write('<?xml version="1.0"?>\n<osm version="0.6" upload="false" generator="osm_grid_splitter">\n')  # noqa
             # We need to reinitialize the id for each .osm file
             osmid = -1
-            for xmlnode in xmlnodes:
+            for xmlnode in nodes[json_feature['id']]:
+                xmlnode.set('id', str(osmid))
+                output.write(etree.tostring(xmlnode))
+                osmid = osmid - 1
+            for xmlnode in ways[json_feature['id']]:
                 xmlnode.set('id', str(osmid))
                 output.write(etree.tostring(xmlnode))
                 osmid = osmid - 1
