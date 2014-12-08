@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.5534667837" minlat="45.6025090087" maxlon="-73.5479736196" maxlat="45.6063520707"/>
 <node lat="45.605031" visible="true" lon="-73.552988" id="-19"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="6850"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 46"/><tag k="addr:street" v="Boulevard Joseph-Renaud"/></node>
 </osm>

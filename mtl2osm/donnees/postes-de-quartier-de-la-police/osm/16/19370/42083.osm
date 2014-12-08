@@ -1,3 +1,4 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.5974120962" minlat="45.4716882517" maxlon="-73.5919189321" maxlat="45.4755402652"/>
 </osm>

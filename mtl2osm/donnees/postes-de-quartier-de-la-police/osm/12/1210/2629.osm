@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.6523437368" minlat="45.3984499699" maxlon="-73.5644531118" maxlat="45.4601306315"/>
 <node lat="45.415499" visible="true" lon="-73.621664" id="-24"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="8745"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 13"/><tag k="addr:street" v="Boulevard Lasalle"/></node>
 <node lat="45.459221" visible="true" lon="-73.573349" id="-31"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="750"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 16"/><tag k="addr:street" v="Rue Willibrord"/></node>
 </osm>

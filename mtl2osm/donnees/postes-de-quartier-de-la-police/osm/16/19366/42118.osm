@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.6193847524" minlat="45.6063520707" maxlon="-73.6138915884" maxlat="45.6101948694"/>
 <node lat="45.607714" visible="true" lon="-73.615622" id="-8"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="6100"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 39"/><tag k="addr:street" v="Boulevard Henri-Bourassa"/></node>
 </osm>

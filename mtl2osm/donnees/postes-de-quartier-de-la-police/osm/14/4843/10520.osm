@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.5864257681" minlat="45.4601306315" maxlon="-73.5644531118" maxlat="45.4755402652"/>
 <node lat="45.463708" visible="true" lon="-73.584954" id="-12"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="1625"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 15"/><tag k="addr:street" v="Avenue de l'Eglise"/></node>
 </osm>

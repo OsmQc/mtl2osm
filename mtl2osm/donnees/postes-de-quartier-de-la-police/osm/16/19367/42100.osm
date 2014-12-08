@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.6138915884" minlat="45.537136674" maxlon="-73.6083984243" maxlat="45.5409842116"/>
 <node lat="45.539756" visible="true" lon="-73.609095" id="-15"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="920"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 35"/><tag k="addr:street" v="Rue Belanger"/></node>
 </osm>

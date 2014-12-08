@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.7402343618" minlat="45.4909456862" maxlon="-73.6962890493" maxlat="45.5217438906"/>
 <node lat="45.518359" visible="true" lon="-73.696679" id="-16"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="1761"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 07"/><tag k="addr:street" v="Rue Grenet"/></node>
 </osm>

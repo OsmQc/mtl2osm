@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.6303710806" minlat="45.537136674" maxlon="-73.6248779165" maxlat="45.5409842116"/>
 <node lat="45.537735" visible="true" lon="-73.628854" id="-13"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="7920"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 31"/><tag k="addr:street" v="Boulevard Saint-Laurent"/></node>
 </osm>
