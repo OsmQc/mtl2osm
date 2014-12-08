@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.6523437368" minlat="45.4601306315" maxlon="-73.4765624868" maxlat="45.5832897496"/>
 <node lat="45.577735" visible="true" lon="-73.617431" id="-3"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="8930"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 30"/><tag k="addr:street" v="Boulevard Pie-IX"/></node>
 <node lat="45.556857" visible="true" lon="-73.545913" id="-4"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="4555"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 23"/><tag k="addr:street" v="Rue Hochelaga"/></node>
 <node lat="45.5201" visible="true" lon="-73.61561" id="-7"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="1435"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 24"/><tag k="addr:street" v="Avenue Van-Horne"/></node>

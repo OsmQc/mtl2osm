@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.5424804556" minlat="45.5832897496" maxlon="-73.5314941275" maxlat="45.590978243"/>
 <node lat="45.583362" visible="true" lon="-73.542094" id="-1"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="6680"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 48"/><tag k="addr:street" v="Rue Sherbrooke Est"/></node>
 </osm>

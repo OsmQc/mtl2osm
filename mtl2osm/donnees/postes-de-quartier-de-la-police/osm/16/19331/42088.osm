@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.8116454946" minlat="45.4909456862" maxlon="-73.8061523305" maxlat="45.4947963832"/>
 <node lat="45.49437" visible="true" lon="-73.807301" id="-2"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="4139"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 04"/><tag k="addr:street" v="Boulevard des Sources"/></node>
 </osm>

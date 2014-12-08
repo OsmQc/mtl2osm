@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-74.1796874867" minlat="45.3367019035" maxlon="-73.8281249868" maxlat="45.5832897496"/>
 <node lat="45.447321" visible="true" lon="-73.852289" id="-17"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="2883"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 01"/><tag k="addr:street" v="Boulevard Saint-Charles"/></node>
 <node lat="45.485819" visible="true" lon="-73.857118" id="-28"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="14680"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 03"/><tag k="addr:street" v="Boulevard de Pierrefonds"/></node>
 </osm>

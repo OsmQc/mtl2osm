@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.5644531118" minlat="45.4909456862" maxlon="-73.5205077993" maxlat="45.5217438906"/>
 <node lat="45.511232" visible="true" lon="-73.560132" id="-22"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="1180"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 21"/><tag k="addr:street" v="Rue Sainte-&#xC9;lisabeth"/></node>
 <node lat="45.52169" visible="true" lon="-73.550961" id="-25"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="1200"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 22"/><tag k="addr:street" v="Avenue Papineau"/></node>
 </osm>

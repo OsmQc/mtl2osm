@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.8281249868" minlat="45.3367019035" maxlon="-73.6523437368" maxlat="45.4601306315"/>
 <node lat="45.447874" visible="true" lon="-73.815896" id="-9"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="395"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 05"/><tag k="addr:street" v="Boulevard Saint-Jean"/></node>
 <node lat="45.43441" visible="true" lon="-73.677137" id="-18"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="170"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 08"/><tag k="addr:street" v="15e Avenue"/></node>
 </osm>

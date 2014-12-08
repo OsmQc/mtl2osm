@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.6083984243" minlat="45.4832435023" maxlon="-73.5974120962" maxlat="45.4909456862"/>
 <node lat="45.486393" visible="true" lon="-73.598652" id="-10"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="21"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 12"/><tag k="addr:street" v="Rue Stanton"/></node>
 </osm>

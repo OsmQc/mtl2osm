@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.6523437368" minlat="45.4601306315" maxlon="-73.6083984243" maxlat="45.4909456862"/>
 <node lat="45.489593" visible="true" lon="-73.641425" id="-26"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="5995"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 26"/><tag k="addr:street" v="Boulevard Decarie"/></node>
 <node lat="45.471141" visible="true" lon="-73.635497" id="-33"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="6255"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 11"/><tag k="addr:street" v="Avenue Somerled"/></node>
 </osm>

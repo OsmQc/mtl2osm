@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.6523437368" minlat="45.5217438906" maxlon="-73.6083984243" maxlat="45.5525252449"/>
 <node lat="45.537735" visible="true" lon="-73.628854" id="-13"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="7920"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 31"/><tag k="addr:street" v="Boulevard Saint-Laurent"/></node>
 <node lat="45.539756" visible="true" lon="-73.609095" id="-15"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="920"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 35"/><tag k="addr:street" v="Rue Belanger"/></node>
 <node lat="45.526943" visible="true" lon="-73.619492" id="-32"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="570"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 33"/><tag k="addr:street" v="Avenue Beaumont"/></node>

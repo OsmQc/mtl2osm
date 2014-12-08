@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
 <osm version="0.6" upload="false" generator="osm_grid_splitter">
+<bounds minlon="-73.6083984243" minlat="45.5832897496" maxlon="-73.5644531118" maxlat="45.6140374049"/>
 <node lat="45.585063" visible="true" lon="-73.593463" id="-6"><tag k="operator" v="Service de police de la ville de Montr&#xE9;al"/><tag k="addr:housenumber" v="8181"/><tag k="amenity" v="police"/><tag k="name" v="Poste de quartier 42"/><tag k="addr:street" v="Boulevard Lacordaire"/></node>
 </osm>
