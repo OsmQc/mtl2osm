@@ -104,6 +104,9 @@ def main():
             os.makedirs(outdir)
         with open(outfile, 'wb') as output:
             output.write('<?xml version="1.0"?>\n<osm version="0.6" upload="false" generator="osm_grid_splitter">\n')  # noqa
+            # Write the boundaries of the .osm file to help JOSM properly display the data
+            # shapely.geometry.Point.bounds is a tuple (minx, miny, maxx, maxy)
+            # In this script we have mapped x to the longitude and y to the lattitude
             output.write('<bounds minlon="%s" minlat="%s" maxlon="%s" maxlat="%s"/>\n' % square_shape.bounds)  # noqa
             for xmlnode in nodes[json_feature['id']]:
                 output.write(etree.tostring(xmlnode))
