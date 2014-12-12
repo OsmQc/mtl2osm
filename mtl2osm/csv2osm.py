@@ -18,6 +18,9 @@ import importlib
 
 from lxml import etree
 
+WGS84_PROJECTION = 'epsg:4326'
+PROJECTION_CACHE = {}
+
 class DefaultTranslator:
     def filterTags(self, attrs):
         """ return a dictionary that will make the tags of the node """
@@ -82,17 +85,38 @@ def read_csv(filename, dialect, encoding):
                 row[key] = unicode(row[key], encoding)
             yield row
 
-def get_lon_lat(row, longitude_field, latitude_field):
+def text2float(text):
+    return float(text.replace(',', '.'))
+
+def get_proj(projection_string):
+    global PROJECTION_CACHE
+    if projection_string not in PROJECTION_CACHE:
+        import pyproj
+        PROJECTION_CACHE[projection_string] = pyproj.Proj(init=projection_string)
+    return PROJECTION_CACHE[projection_string]
+
+def get_lon_lat(row, longitude_field, latitude_field, source_projection):
     if longitude_field not in row:
         raise Exception("'%s' column not found in CSV file. Please use the --lat option to specify "
                         "the name of the column containing the longitude." % longitude_field)
     if latitude_field not in row:
         raise Exception("'%s' column not found in CSV file. Please use the --lat option to specify "
                         "the name of the column containing the latitude." % latitude_field)
-    return row[longitude_field], row[latitude_field]
 
-def generate_node_xml(row, longitude_field, latitude_field, translator):
-    lon, lat = get_lon_lat(row, longitude_field, latitude_field)
+    lon, lat = text2float(row[longitude_field]), text2float(row[latitude_field])
+
+    if source_projection != WGS84_PROJECTION:
+        srcproj = get_proj(source_projection)
+        wgs84proj = get_proj(WGS84_PROJECTION)
+        import pyproj
+        lon, lat = pyproj.transform(srcproj, wgs84proj, lon, lat)
+
+    # OpenStreetMap supports 7 decimal places
+    lon, lat = round(lon, 7), round(lat, 7)
+    return lon, lat
+
+def generate_node_xml(row, args, translator):
+    lon, lat = get_lon_lat(row, args.longitude_field, args.latitude_field, args.source_projection)
     xmlattrs = {
         'visible': 'true',
         'lon': str(lon),
@@ -119,6 +143,12 @@ def parse_args():
         help='Name of the field that contains the longitude')
     parser.add_argument('--lat', dest='latitude_field', default='latitude',
         help='Name of the field that contains the latitude')
+    parser.add_argument('--src-proj', dest='source_projection', default=WGS84_PROJECTION,
+        help='Projection of the latitude and longitude fields, defined '
+             'according to PROJ.4 syntax. Only specify if the projection '
+             'is not the standard GPS/WGS84 projection (defined in PROJ.4 as '
+             '\'epsg:4326\'). In case of doubt, ignore this parameter. '
+             'Requires the pyproj library.')
     parser.add_argument('--translator', help='Python file to import that '
         'contains special translation methods to transform the tags.')
     parser.add_argument('-f', '--force', dest='force_overwrite', action='store_true',
@@ -138,7 +168,7 @@ def main():
         for row in read_csv(args.csv_file, args.csv_dialect, args.csv_encoding):
             if not translator.keepRow(row):
                 continue
-            output.write(generate_node_xml(row, args.longitude_field, args.latitude_field, translator))
+            output.write(generate_node_xml(row, args, translator))
             output.write('\n')
         output.write('</osm>\n')
 
